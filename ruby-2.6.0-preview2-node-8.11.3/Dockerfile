@@ -1,32 +1,5 @@
 FROM buildpack-deps:stretch
 
-# default libs
-RUN set -ex \
-    && apt-get update -qq \
-    && apt-get install -y \
-      build-essential \
-      libpq-dev \
-      apt-transport-https \
-      graphviz \
-      vim \
-      curl \
-      wget \
-    && apt-get clean \
-    && rm -r /var/lib/apt/lists/*
-
-# default qt5 libs (capybara-webkit dependencies)
-RUN set -ex \
-    && apt-get update -qq \
-    && apt-get install -y \
-      qt5-default \
-      libqt5webkit5-dev \
-      gstreamer1.0-plugins-base \
-      gstreamer1.0-tools \
-      gstreamer1.0-x \
-    && apt-get clean \
-    && rm -r /var/lib/apt/lists/*
-
-
 # ==============================
 # install ruby environment
 # ==============================
@@ -169,3 +142,34 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
+
+
+# ==============================
+# Otherwise
+# ==============================
+
+# default libs
+RUN set -ex \
+    && apt-get update -qq \
+    && apt-get install -y \
+      build-essential \
+      libpq-dev \
+      apt-transport-https \
+      graphviz \
+      vim \
+      curl \
+      wget \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
+
+# default qt5 libs (capybara-webkit dependencies)
+RUN set -ex \
+    && apt-get update -qq \
+    && apt-get install -y \
+      qt5-default \
+      libqt5webkit5-dev \
+      gstreamer1.0-plugins-base \
+      gstreamer1.0-tools \
+      gstreamer1.0-x \
+    && apt-get clean \
+    && rm -r /var/lib/apt/lists/*
