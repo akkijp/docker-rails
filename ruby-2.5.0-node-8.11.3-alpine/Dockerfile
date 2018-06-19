@@ -1,4 +1,5 @@
 FROM alpine:3.7
+LABEL maintainer="Kosuke Akizuki kosuke19952000@gmail.com"
 
 # ==============================
 # install ruby environment
