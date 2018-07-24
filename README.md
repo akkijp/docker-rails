@@ -1,7 +1,8 @@
 # environment-rails
 docker hub: https://hub.docker.com/r/rorono/rails/
+quay.io: https://quay.io/repository/rorono/rails
 
-## Example
+## Example Usage
 
 ### production
 ```Dockerfile
