@@ -8,6 +8,10 @@ build:
 		--tag quay.io/rorono/rails:ruby-2.5.0-node-8.11.3-alpine \
 		./ruby-2.5.0-node-8.11.3-alpine
 	@docker build \
+		--tag rorono/rails:ruby-2.5.0-node-8.11.3-onbuild \
+		--tag quay.io/rorono/rails:ruby-2.5.0-node-8.11.3-onbuild \
+		./ruby-2.5.0-node-8.11.3-onbuild
+	@docker build \
 		--tag rorono/rails:ruby-2.5.0-node-10.4.1 \
 		--tag quay.io/rorono/rails:ruby-2.5.0-node-10.4.1 \
 		./ruby-2.5.0-node-10.4.1
