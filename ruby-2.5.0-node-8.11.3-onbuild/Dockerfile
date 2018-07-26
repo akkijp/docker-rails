@@ -199,5 +199,6 @@ ONBUILD COPY Rakefile ./
 ONBUILD COPY config config
 ONBUILD COPY app app
 ONBUILD COPY bin bin
+ONBUILD RUN bundle exec rails assets:precompile
 
 ONBUILD ADD . /app
