@@ -20,9 +20,9 @@ env:
 
 script:
   - |
-    docker build
-      --tag ${REPO}:${DOCKER_RAILS}
-      --tag ${REPO}:${DOCKER_RAILS}-${COMMIT_HASH}
+    docker build \
+      --tag ${REPO}:${DOCKER_RAILS} \
+      --tag ${REPO}:${DOCKER_RAILS}-${COMMIT_HASH} \
       ./${DOCKER_RAILS}
 
 after_success:
