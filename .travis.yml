@@ -1,5 +1,6 @@
 sudo: required
-dist: trusty
+services:
+  - docker
 
 env:
   global:
@@ -17,6 +18,11 @@ env:
     - DOCKER_RAILS=ruby-2.5.1-node-8.11.3-alpine
     - DOCKER_RAILS=ruby-2.6.0-preview2-node-8.11.3
 
+script:
+  - docker build
+		--tag ${REPO}:${DOCKER_RAILS}
+		--tag ${REPO}:${DOCKER_RAILS}-${COMMIT_HASH}
+		./${DOCKER_RAILS}
 
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
