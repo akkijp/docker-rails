@@ -27,4 +27,5 @@ script:
 
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  - docker push ${REPO}
+  - docker push ${REPO}:${DOCKER_RAILS}
+  - docker push ${REPO}:${DOCKER_RAILS}-${COMMIT_HASH}
