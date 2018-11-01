@@ -1,17 +1,28 @@
 sudo: required
 services:
-- docker
+  - docker
 
 env:
+  - DOCKER_RAILS=ruby-2.5.0-node-10.4.1
+  - DOCKER_RAILS=ruby-2.5.0-node-10.7.0
+  - DOCKER_RAILS=ruby-2.5.0-node-8.11.3
+  - DOCKER_RAILS=ruby-2.5.0-node-8.11.3-alpine
+  - DOCKER_RAILS=ruby-2.5.0-node-8.11.3-onbuild
+  - DOCKER_RAILS=ruby-2.5.1-node-8.11.3
+  - DOCKER_RAILS=ruby-2.5.1-node-8.11.3-alpine
+  - DOCKER_RAILS=ruby-2.6.0-preview2-node-8.11.3
   global:
-  - COMMIT_HASH=${TRAVIS_COMMIT::8}
-  - REPO=rorono/rails
-  - secure: ndaAJpGC2hABqnvK81NJ2Cj2ICy8eybEFYHaOHFYqQOBJYTkopnZetomcVIWmpwjs2Uea7ByaHdsZS1sezaHoMlA62ThmhDOEu8eODJ7elmSZ7z0CWgmBPCmgt/+zNk/Reyc8eRCyq5+QnCabVQbfJ4vpgD88LT6B0eVXW5FbsNhtCdsHed4wcoypQx8gw4jmCfjWmXgXS1YcY/z12iXPdTixpmi0uTCiE7rJYIHbbHyMgy16MG+A0kaiWfewncr67pGPdoouuVqasmNsR3Cr9C9m1+RGfJlP0BMlYDiPnvhyrGPhHnN7L/M9SLnqdZ073vYaDByze4DY3zXrgn0J/d0V+Z69UL94fW+rqiZB1aXpffOd8lxd+4aXd77BHBMcdfAuo8POx+A8p3Nx3HBlRROo7C4kGIoLNq2b+On8io9jZbFgeAY9wuuaqEfuC0P/Tw05KQF5mEc/dtEBxVq/K92inpCB7XJiIJ8hFUS7loU1QcW+XmkG0Ox7f6VaNSmmRxpLk5zp0dByvvB6z0eZ0CBPVozAH0VbuqZzbayPLLl81XBvw0iae2iOKCe2gmxQGY3fdKxSV5vFYg18H95/rp7rlSGf+3/0VbLGb/SKg+bWOpBTU2XCQzqTcSaDiYhR5alzFyL1ohT+V26vUPdEB9DWlr/rOhwpxraoo98bLs=
-  - secure: FixM25SuJj8eCJaRIWhlj7d4Re88udP7/RyP24uKnWwXzENOg++ton0iNRDkxuCZe1f2mhLq0ZrVqcgY20YOcGZBbEOjKC6xP6GeC+Etgpzpsx3reC7kufrSOeusyFGbFEIxXU1BpqeVMLbn62sxhFZzwYqb+EfLxYLAWCLj5WQwopEARWaFZzt89JGjkxuO5gQ6LcOjdhj+YAZV263KYkPqyAxA0taa1fKL6PAP3h5aFaH3VJvhP5M5krJ7POUnY/J6ZJZubc9hFEAE54OqcvfQ4TGtsVm9FBlH3ixHLsfGqZJQ+B4zJqWMbrrUQfiNUoie3bYANLMyIvRYvlY2jzhxY4sOVbhqG8+lW3pVYgIZb1nbL55bYSkZoG8VG4osiOsrMg8p/zaCIPoIpRFqg6UWHHSjRWFbg8GxLPchoOGKBXKFHfrFCBE8eN/7nEIL47PC14UYSxql5xP1/D4MUIPGfqQYjGxBvjPuusDGWnUdSdceqoPFoVEkuGv6ZtG89XafuH1Zn3uQP1H4L7cWqpvK9LCpnTje3KXlqC/9lu1aE0fma8vWh/Qg0GuohqUK+NbhQjU5sUG2jyRki37g7NAv34wx/3DygOJVjuq2eJm7SVtHTCl1q8hyJtxq+0LJNMdrDmmRQk2Xer3IlkWAzSGEeK9LVoP9N489FkBsRaQ=
+    - COMMIT_HASH=${TRAVIS_COMMIT::8}
+    - REPO=rorono/rails
+    - secure: ndaAJpGC2hABqnvK81NJ2Cj2ICy8eybEFYHaOHFYqQOBJYTkopnZetomcVIWmpwjs2Uea7ByaHdsZS1sezaHoMlA62ThmhDOEu8eODJ7elmSZ7z0CWgmBPCmgt/+zNk/Reyc8eRCyq5+QnCabVQbfJ4vpgD88LT6B0eVXW5FbsNhtCdsHed4wcoypQx8gw4jmCfjWmXgXS1YcY/z12iXPdTixpmi0uTCiE7rJYIHbbHyMgy16MG+A0kaiWfewncr67pGPdoouuVqasmNsR3Cr9C9m1+RGfJlP0BMlYDiPnvhyrGPhHnN7L/M9SLnqdZ073vYaDByze4DY3zXrgn0J/d0V+Z69UL94fW+rqiZB1aXpffOd8lxd+4aXd77BHBMcdfAuo8POx+A8p3Nx3HBlRROo7C4kGIoLNq2b+On8io9jZbFgeAY9wuuaqEfuC0P/Tw05KQF5mEc/dtEBxVq/K92inpCB7XJiIJ8hFUS7loU1QcW+XmkG0Ox7f6VaNSmmRxpLk5zp0dByvvB6z0eZ0CBPVozAH0VbuqZzbayPLLl81XBvw0iae2iOKCe2gmxQGY3fdKxSV5vFYg18H95/rp7rlSGf+3/0VbLGb/SKg+bWOpBTU2XCQzqTcSaDiYhR5alzFyL1ohT+V26vUPdEB9DWlr/rOhwpxraoo98bLs=
+    - secure: FixM25SuJj8eCJaRIWhlj7d4Re88udP7/RyP24uKnWwXzENOg++ton0iNRDkxuCZe1f2mhLq0ZrVqcgY20YOcGZBbEOjKC6xP6GeC+Etgpzpsx3reC7kufrSOeusyFGbFEIxXU1BpqeVMLbn62sxhFZzwYqb+EfLxYLAWCLj5WQwopEARWaFZzt89JGjkxuO5gQ6LcOjdhj+YAZV263KYkPqyAxA0taa1fKL6PAP3h5aFaH3VJvhP5M5krJ7POUnY/J6ZJZubc9hFEAE54OqcvfQ4TGtsVm9FBlH3ixHLsfGqZJQ+B4zJqWMbrrUQfiNUoie3bYANLMyIvRYvlY2jzhxY4sOVbhqG8+lW3pVYgIZb1nbL55bYSkZoG8VG4osiOsrMg8p/zaCIPoIpRFqg6UWHHSjRWFbg8GxLPchoOGKBXKFHfrFCBE8eN/7nEIL47PC14UYSxql5xP1/D4MUIPGfqQYjGxBvjPuusDGWnUdSdceqoPFoVEkuGv6ZtG89XafuH1Zn3uQP1H4L7cWqpvK9LCpnTje3KXlqC/9lu1aE0fma8vWh/Qg0GuohqUK+NbhQjU5sUG2jyRki37g7NAv34wx/3DygOJVjuq2eJm7SVtHTCl1q8hyJtxq+0LJNMdrDmmRQk2Xer3IlkWAzSGEeK9LVoP9N489FkBsRaQ=
 
 script:
-  - make build
+  - docker build
+		--tag ${REPO}:${DOCKER_RAILS}
+		--tag ${REPO}:${DOCKER_RAILS}-${COMMIT_HASH}
+		./${DOCKER_RAILS}
 
 after_success:
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
-  - make push
+  - docker push ${REPO}
