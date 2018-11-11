@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 LABEL maintainer="Kosuke Akizuki kosuke19952000@gmail.com"
 
 # ==============================
