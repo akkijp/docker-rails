@@ -32,6 +32,12 @@ build:
 		--tag quay.io/rorono/rails:ruby-2.5.0-node-10.7.0-${COMMIT_HASH} \
 		./ruby-2.5.0-node-10.7.0
 	@docker build \
+		--tag rorono/rails:ruby-2.5.0-node-10.15.3 \
+		--tag rorono/rails:ruby-2.5.0-node-10.15.3-${COMMIT_HASH} \
+		--tag quay.io/rorono/rails:ruby-2.5.0-node-10.15.3 \
+		--tag quay.io/rorono/rails:ruby-2.5.0-node-10.15.3-${COMMIT_HASH} \
+		./ruby-2.5.0-node-10.15.3
+	@docker build \
 		--tag rorono/rails:ruby-2.5.1-node-8.11.3 \
 		--tag rorono/rails:ruby-2.5.1-node-8.11.3-${COMMIT_HASH} \
 		--tag quay.io/rorono/rails:ruby-2.5.1-node-8.11.3 \

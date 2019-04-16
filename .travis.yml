@@ -11,6 +11,7 @@ env:
   matrix:
     - DOCKER_RAILS=ruby-2.5.0-node-10.4.1
     - DOCKER_RAILS=ruby-2.5.0-node-10.7.0
+    - DOCKER_RAILS=ruby-2.5.0-node-10.15.3
     - DOCKER_RAILS=ruby-2.5.0-node-8.11.3
     - DOCKER_RAILS=ruby-2.5.0-node-8.11.3-alpine
     - DOCKER_RAILS=ruby-2.5.0-node-8.11.3-onbuild
