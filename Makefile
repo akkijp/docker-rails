@@ -14,12 +14,6 @@ build:
 		--tag quay.io/rorono/rails:ruby-2.5.0-node-8.11.3-alpine-${COMMIT_HASH} \
 		./ruby-2.5.0-node-8.11.3-alpine
 	@docker build \
-		--tag rorono/rails:ruby-2.5.0-node-8.11.3-onbuild \
-		--tag rorono/rails:ruby-2.5.0-node-8.11.3-onbuild-${COMMIT_HASH} \
-		--tag quay.io/rorono/rails:ruby-2.5.0-node-8.11.3-onbuild \
-		--tag quay.io/rorono/rails:ruby-2.5.0-node-8.11.3-onbuild-${COMMIT_HASH} \
-		./ruby-2.5.0-node-8.11.3-onbuild
-	@docker build \
 		--tag rorono/rails:ruby-2.5.0-node-10.4.1 \
 		--tag rorono/rails:ruby-2.5.0-node-10.4.1-${COMMIT_HASH} \
 		--tag quay.io/rorono/rails:ruby-2.5.0-node-10.4.1 \
