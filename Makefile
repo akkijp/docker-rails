@@ -7,6 +7,12 @@ build:
 		--tag quay.io/rorono/rails:ruby-2.6.3-node-12.1.0 \
 		--tag quay.io/rorono/rails:ruby-2.6.3-node-12.1.0-${COMMIT_HASH} \
 		./ruby-2.6.3-node-12.1.0
+	@docker build \
+		--tag rorono/rails:ruby-2.6.5-node-12.1.0 \
+		--tag rorono/rails:ruby-2.6.5-node-12.1.0-${COMMIT_HASH} \
+		--tag quay.io/rorono/rails:ruby-2.6.5-node-12.1.0 \
+		--tag quay.io/rorono/rails:ruby-2.6.5-node-12.1.0-${COMMIT_HASH} \
+		./ruby-2.6.5-node-12.1.0
 	@echo "build done."
 
 push:
