@@ -5,7 +5,6 @@ LABEL maintainer="Kosuke Akizuki kosuke19952000@gmail.com"
 # install ruby environment
 # ==============================
 
-
 # skip installing gem documentation
 RUN set -eux; \
 	mkdir -p /usr/local/etc; \
@@ -15,8 +14,8 @@ RUN set -eux; \
 	} >> /usr/local/etc/gemrc
 
 ENV RUBY_MAJOR 2.6
-ENV RUBY_VERSION 2.6.3
-ENV RUBY_DOWNLOAD_SHA256 11a83f85c03d3f0fc9b8a9b6cad1b2674f26c5aaa43ba858d4b0fcc2b54171e1
+ENV RUBY_VERSION 2.6.5
+ENV RUBY_DOWNLOAD_SHA256 d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c31190abe01a62
 
 # some of ruby's build scripts are written in ruby
 #   we purge system ruby later to make sure our final image uses what we just built
