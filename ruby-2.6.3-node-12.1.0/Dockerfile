@@ -5,6 +5,7 @@ LABEL maintainer="Kosuke Akizuki kosuke19952000@gmail.com"
 # install ruby environment
 # ==============================
 
+
 # skip installing gem documentation
 RUN set -eux; \
 	mkdir -p /usr/local/etc; \
