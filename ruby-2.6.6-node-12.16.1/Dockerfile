@@ -5,6 +5,7 @@ LABEL maintainer="Kosuke Akizuki kosuke19952000@gmail.com"
 # install ruby environment
 # ==============================
 
+
 # skip installing gem documentation
 RUN set -eux; \
 	mkdir -p /usr/local/etc; \
@@ -14,8 +15,8 @@ RUN set -eux; \
 	} >> /usr/local/etc/gemrc
 
 ENV RUBY_MAJOR 2.6
-ENV RUBY_VERSION 2.6.5
-ENV RUBY_DOWNLOAD_SHA256 d5d6da717fd48524596f9b78ac5a2eeb9691753da5c06923a6c31190abe01a62
+ENV RUBY_VERSION 2.6.6
+ENV RUBY_DOWNLOAD_SHA256 5db187882b7ac34016cd48d7032e197f07e4968f406b0690e20193b9b424841f
 
 # some of ruby's build scripts are written in ruby
 #   we purge system ruby later to make sure our final image uses what we just built
@@ -94,12 +95,10 @@ RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
 # install node environment
 # ==============================
 
-
-
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
-ENV NODE_VERSION 12.1.0
+ENV NODE_VERSION 12.16.1
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
@@ -192,5 +191,6 @@ RUN set -ex \
       gstreamer1.0-x \
     && apt-get clean \
     && rm -r /var/lib/apt/lists/*
+
 
 CMD [ "/bin/bash" ]
