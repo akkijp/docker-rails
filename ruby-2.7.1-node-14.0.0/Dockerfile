@@ -98,7 +98,7 @@ RUN mkdir -p "$GEM_HOME" && chmod 777 "$GEM_HOME"
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
-ENV NODE_VERSION 12.16.2
+ENV NODE_VERSION 14.0.0
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
@@ -160,7 +160,7 @@ RUN set -ex \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
   # smoke test
   && yarn --version
-
+  
 
 # ==============================
 # Otherwise
