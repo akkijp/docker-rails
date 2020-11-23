@@ -1,6 +1,8 @@
 FROM buildpack-deps:focal
 LABEL maintainer="Kosuke Akizuki kosuke19952000@gmail.com"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # ==============================
 # install ruby environment
 # ==============================
