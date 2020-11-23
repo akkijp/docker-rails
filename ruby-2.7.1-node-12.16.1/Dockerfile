@@ -1,4 +1,4 @@
-FROM buildpack-deps:buster
+FROM buildpack-deps:focal
 LABEL maintainer="Kosuke Akizuki kosuke19952000@gmail.com"
 
 # ==============================
