@@ -1,4 +1,4 @@
-# environment-rails [![Build Status](https://travis-ci.org/rorono/environment-rails.svg?branch=master)](https://travis-ci.org/rorono/environment-rails)
+# docker-rails [![Build Status](https://travis-ci.org/rorono/docker-rails.svg?branch=master)](https://travis-ci.org/rorono/docker-rails)
 - docker hub: https://hub.docker.com/r/rorono/rails/
 - quay.io: https://quay.io/repository/rorono/rails
 
